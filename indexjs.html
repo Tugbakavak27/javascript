@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Dersleri</title>
-
-
-</head>
-<body>
-
-    <script src="js/kodlar.js"></script>
-
-    <!-- JavaScript Dersleri 
+    
+     <!---DOM: Document Object Model
+        Html tüm bir vücut gibidir .
+        Document nesnesi ile vüzudun parçalarına erişilebilir.
+        Bir HTML yapısında, JS ile "Document" nesnesi kullanılarak sayfa içerisinde bir takım değişiklikler yapılabilir.
+    
+        JavaScript Dersleri 
      Script etiketleri HTML dosyasının head veya body bölümüne eklenebilir.
      Script etiketleri head bölümünde yüklendiğinde, sayfa içeriği yüklenmeden önce çalıştırılır.
      Script etiketleri body bölümünde yüklendiğinde, sayfa içeriği yüklendikten sonra çalıştırılır.
@@ -27,17 +26,60 @@
         7- Diziler (Arrays)
         8- Nesneler (Objects)
         9- DOM Manipülasyonu (DOM Manipulation)
-        10- Olaylar (Events)
-
-     -->
+        10- Olaylar (Events)-->  
     
-     <!--<script>
+   <script>
          //<script type="text/javascript">
 
         //JavaScript kodları için yorum satırı
         // Bu kod, bir uyarı penceresi gösterir
         alert("Bu bir JavaScript uyarısıdır!");
+     </script>
+    
+    
+    <script src="js/kodlar.js"></script>
 
-     </script>-->
+    <noscript> Bu tarayıcı javascript desteklemiyor!</noscript> // JavaScript devre dışı ise gösterilecek içerik
+
+</head>
+<body>
+<p>..</p>
+<p>..</p>
+<p>..</p>
+<p>..</p>
+<p class="pOzel">Herhangi bir içerik yazısı</p>
+<a id="link" href="#" title="title..">text text</a>  
+<script> 
+// JavaScript ile Document Nesnesi Kullanımı
+// document nesnesi ile HTML sayfasının içeriğine erişim ve değişiklik yapma: 
+// document nesnesi, HTML sayfasının tamamını temsil eder ve sayfa içeriğine erişim sağlar.
+// document nesnesi ile sayfa başlığı, metin içeriği, stil ve diğer özellikler değiştirilebilir.
+// document.write(), document.getElementById(), document.getElementsByTagName(), document.getElementsByClassName() gibi metodlar kullanılarak sayfa içeriği manipüle edilebilir.
+// document.write() metodu, sayfa yüklendikten sonra çağrıldığında mevcut içeriği siler ve yeni içerik ekler.
+// document.getElementById() metodu, belirli bir id'ye sahip HTML elementine erişim sağlar.
+// document.getElementsByTagName() metodu, belirli bir etiket adına sahip tüm HTML elementlerine erişim sağlar.
+// document.getElementsByClassName() metodu, belirli bir sınıf adına sahip tüm HTML elementlerine erişim sağlar.
+//Örnekler:
+    document.write("JavaScript ile yazdırılan metin"); // document nesnesi ile write() metodu kullanılarak metin yazdırma
+    document.title="JS Dersleri - Başlık Değişti"; // document nesnesi ile title özelliği kullanılarak sayfa başlığını değiştirme
+    document.getElementById("link").innerHTML="Link Metni Değişti";
+         // document nesnesi ile getElementById() metodu kullanılarak bir elementin içeriğini değiştirme
+    document.getElementById("link").textContent="Yeni Link Metni"; 
+         // document nesnesi ile getElementById() metodu kullanılarak bir elementin metin içeriğini değiştirme  
+    document.getElementById("link").setAttribute("href","https://www.google.com.tr"); 
+         // document nesnesi ile getElementById() metodu kullanılarak bir elementin attribute (özellik) değerini değiştirme
+    document.write("<br><p>"+ document.getElementById("link").getAttribute("title")+ "</p>"); 
+         // document nesnesi ile getElementById() metodu kullanılarak bir elementin attribute (özellik) değerini alma
+    document.getElementsByTagName("p")[1].style.color="red"; 
+         // document nesnesi ile getElementsByTagName() metodu kullanılarak bir elementin stilini değiştirme
+    document.getElementsByClassName("pOzel")[0].style.fontSize="20px"; 
+         // document nesnesi ile getElementsByClassName() metodu kullanılarak bir elementin stilini değiştirme  
+    document.getElementsByTagName("p")[0].innerText="İlk paragrafın metni değişti."; 
+         // document nesnesi ile getElementsByTagName() metodu kullanılarak bir elementin metin içeriğini değiştirme
+    document.getElementsByTagName("p")[2].innerHTML="<b>Üçüncü paragrafın içeriği değişti.</b>"; 
+         // document nesnesi ile getElementsByTagName() metodu kullanılarak bir elementin HTML içeriğini değiştirme     
+    document.getElementsByClassName("pOzel")[0].innerHTML="Özel sınıfa sahip paragrafın içeriği değişti.";
+         // document nesnesi ile getElementsByClassName() metodu kullanılarak bir elementin attribute (özellik) değerini değiştirme
+</script>
 </body>
 </html>
