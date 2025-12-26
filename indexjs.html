@@ -49,7 +49,7 @@
 <p>..</p>
 <p class="pOzel">Herhangi bir içerik yazısı</p>
 <a id="link" href="#" title="title..">text text</a>  
-<script> 
+<!--<script> 
 // JavaScript ile Document Nesnesi Kullanımı
 // document nesnesi ile HTML sayfasının içeriğine erişim ve değişiklik yapma: 
 // document nesnesi, HTML sayfasının tamamını temsil eder ve sayfa içeriğine erişim sağlar.
@@ -80,6 +80,80 @@
          // document nesnesi ile getElementsByTagName() metodu kullanılarak bir elementin HTML içeriğini değiştirme     
     document.getElementsByClassName("pOzel")[0].innerHTML="Özel sınıfa sahip paragrafın içeriği değişti.";
          // document nesnesi ile getElementsByClassName() metodu kullanılarak bir elementin attribute (özellik) değerini değiştirme
+</script>-->
+
+<script>
+    //Javascript ile değişken tanımlama ve veri tipleri
+    // Değişkenler, verileri saklamak için kullanılır ve farklı veri tiplerine sahip olabilirler.
+    // JavaScript'te değişkenler "var", "let" veya "const" anahtar kelimeleri ile tanımlanabilir.
+    // Veri tipleri: String (metin), Number (sayı), Boolean (doğru/yanlış), Array (dizi), Object (nesne), Null (boş değer), Undefined (tanımsız)
+    // Örnekler:
+    var isim = "Sema"; // String veri tipi sayesinde metin saklanabilir.
+    //değişken isimlendirme kuralları: harf, rakam, _ ve $ karakterleri kullanılabilir. Rakam ile başlayamaz. Boşluk içeremez. Büyük/küçük harf duyarlıdır.
+    // Örnek: var 1isim = "Ali"; // Geçersiz
+    // Örnek: var isim soyisim = "Ali Veli"; // Geçersiz    
+    //değişken değerini değiştirmek
+    //tekrar var komutu ile tanımlanamaz. 
+    isim = "Ayşe"; // Değişken değeri değiştirilebilir.
+    let yas = 25; // Number veri tipi sayısal değerler saklanabilir.
+    const evliMi = false; // Boolean veri tipi doğru/yanlış değerler saklanabilir.
+    var hobiler = ["kitap okuma", "yüzme", "seyahat"]; // Array veri tipi dizi saklanabilir.
+    var kisi = {ad: "Ali", soyad: "Veli", yas: 30}; // Object veri tipi nesne saklanabilir.
+    var bosDeger = null; // Null veri tipi boş değer saklanabilir.
+    var tanimsizDeger; // Undefined veri tipi tanımsız değer saklanabilir.
+    document.write("<br>İsim: " + isim); // Değişken kullanımı ve ekrana yazdırma
+    document.write("<br>Yaş: " + yas); // Değişken kullanımı ve ekrana yazdırma
+    document.write("<br>Evli mi: " + evliMi);    // Değişken kullanımı ve ekrana yazdırma
+    document.write("<br>Hobiler: " + hobiler.join(", ")); // Değişken kullanımı ve ekrana yazdırma
+    document.write("<br>Kişi: " + kisi.ad + " " + kisi.soyad + ", Yaş: " + kisi.yas); // Değişken kullanımı ve ekrana yazdırma
+    document.write("<br>Boş Değer: " + bosDeger);   // Değişken kullanımı ve ekrana yazdırma
+    document.write("<br>Tanımsız Değer: " + tanimsizDeger);  // Değişken kullanımı ve ekrana yazdırma
+    //değişken değeri sayıda ise matematiksel işlemler yapılabilir.
+    var sayi1 = 10;
+    var sayi2 = 5;
+    document.write(sayi1+sayi2); //15
+    document.write("<br>");
+    document.write(sayi1-sayi2); //5
+    document.write("<br>");
+    document.write(sayi1*sayi2); //50
+    document.write("<br>");
+    document.write(sayi1/sayi2); //2
+    sayi2=3; //sayi2 değişkeninin değeri 3 olarak değiştirildi
+    document.write("<br>");
+    document.write(sayi1+sayi2); //13 - sayi2 değişkeninin yeni değeri kullanıldı
+
+
+    //Değişken Deklarasyonları 1
+    //var: fonksiyon scoped (fonksiyon içinde geçerli), yeniden tanımlanabilir
+    //let: block scoped (blok içinde geçerli), yeniden tanımlanamaz
+    //const: block scoped (blok içinde geçerli), sabit değer, yeniden atanamaz
+    // Örnekler:
+    var sehir = "İstanbul";
+    let ulke = "Türkiye";
+    const pi = 3.14;
+    document.write("<br>Şehir: " + sehir);
+    document.write("<br>Ülke: " + ulke);
+    document.write("<br>Pi sayısı: " + pi);
+
+    //Değişken Deklarasyonları 2
+    //Deklarasyon , değişkeni oluşturur ama değer atamaz.
+    // Var ile deklarasyon yapıldığında, değişken undefined (tanımsız) olarak başlatılır.
+    // Global scope (genel kapsam) ve local scope (yerel kapsam) kavramları burada önemlidir.
+    // Var ile global değişkenler tüm fonksiyonlardan erişilebilirken, local değişkenler sadece tanımlandıkları fonksiyon içinde erişilebilir.
+    var a; // Deklarasyon
+    //document.write("<br>a değişkeni tanımlandı ancak değeri atanmamış: " + a);
+    a = 10; // Atama
+    document.write("<br>a değişkeninin değeri: " + a);
+    var toplam = a + 5; // Deklarasyon ve atama aynı satırda
+    document.write("<br>Toplam: " + toplam);
+    //let ise yerel kapsamda (block scoped) çalışır ve sadece tanımlandığı blok içinde geçerlidir.
+    let b = 20; // Let ile deklarasyon ve atama,  
+    document.write("<br>b değişkeninin değeri: " + b);
+    //const ise sabit değerler için kullanılır ve değeri değiştirilemez.
+    const pi1 = 3.14; // Const ile deklarasyon ve atama 
+    document.write("<br>pi1 değişkeninin değeri: " + pi1);
+    pi1 = 3.14159; // Hata: const ile tanımlanan değişkenin değeri değiştirilemez.
+    document.write("<br>pi1 değişkeninin yeni değeri: " + pi1);   // Bu satır hata verecektir.
 </script>
 </body>
 </html>
